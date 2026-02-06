@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+//font
+$principal-font: 'Lato', sans-serif;
+
+
+//Colors
+$primary: #667eea;
+$background: #f8f9fa;
+$gray: #e1e1e1;
+$dark: #333333;
+$white: #FFFFFF;
+$dark-gray: #555;
+$black: #000000;
+
+// Semantic Colors
+$success: #48bb78;        
+$error: #f56565;          
+$warning: #ed8936;        
+$info: #4299e1;   
+
+// Text Colors
+$text-primary: #333333;
+$text-secondary: #555555;
+
+//  Media Queries sizes
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
