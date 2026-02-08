@@ -9,11 +9,11 @@ app.use(cors())
 app.use(bodyParser.json())
 
 let users = [
-    { name: 'Marlon', lastName: 'Torres', dateOfBirth: '1995-12-24'},
-    { name: 'Maybelline', lastName: 'Mejía', dateOfBirth: '1996-02-05'},
-    { name: 'Norma', lastName: 'Torres', dateOfBirth: '1975-06-07'},
-    { name: 'Oscar', lastName: 'Guerrero', dateOfBirth: '1997-06-30'},
-    { name: 'Danna', lastName: 'Marroquín', dateOfBirth: '2023-12-28'},
+    { name: 'Marlon', lastName: 'Torres', birthDate: '1995-12-24'},
+    { name: 'Maybelline', lastName: 'Mejía', birthDate: '1996-02-05'},
+    { name: 'Norma', lastName: 'Torres', birthDate: '1975-06-07'},
+    { name: 'Oscar', lastName: 'Guerrero', birthDate: '1997-06-30'},
+    { name: 'Danna', lastName: 'Marroquín', birthDate: '2023-12-28'},
 ]
 
 app.get('/api/users/1/users', (req, res)=> {
