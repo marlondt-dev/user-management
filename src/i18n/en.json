@@ -3,7 +3,26 @@
         "users": "Users",
         "createUsers": "Create User"
     },
-    "userList" : {
-        "title": "Users"
+    "userList": {
+        "title": "User List",
+        "loading": "Loading",
+        "fullName": "Full Name",
+        "age": "Age",
+        "years": "years old"
+    },
+    "userForm": {
+        "name": "Name",
+        "lastName": "Last Name",
+        "birthDate": "Birth Date",
+        "cancel": "Cancel",
+        "submit": "Create",
+        "success": "User created successfully",
+        "errors": {
+            "nameRequired": "Name is required",
+            "lastNameRequired": "Last name is required",
+            "birthDateRequired": "Birth date is required",
+            "birthDateFuture": "Birth date cannot be in the future",
+            "birthDateInvalid": "Birth date is not valid"
+        }
     }
 }

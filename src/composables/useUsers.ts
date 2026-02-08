@@ -22,7 +22,7 @@ export function useUsers() {
 
     }
 
-    const createUSer = async (user: User) => {
+    const createUser = async (user: User) => {
         loading.value = true
         error.value = null
 
@@ -54,7 +54,8 @@ export function useUsers() {
     loading, 
     error,
     fetchUsers,
-    createUSer, 
-    calculateAge
+    createUser, 
+    calculateAge,
+    
   }
 }

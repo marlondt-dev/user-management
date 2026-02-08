@@ -15,11 +15,11 @@ export const userService = {
         const response = await fetch(`${API_URL}/users`, {
             method: 'POST',
             headers: {
-                'Content-Type':'aplication/json'
+                'Content-Type': 'application/json'  
             },
             body: JSON.stringify(user)
         })
-        if(!response.ok) {
+        if (!response.ok) {
             throw new Error('Failed to create a new user')
         }
     }

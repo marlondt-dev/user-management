@@ -1,0 +1,28 @@
+{
+    "nav": {
+        "users": "Utilisateurs",
+        "createUsers": "Créer un Utilisateur"
+    },
+    "userList": {
+        "title": "Liste des Utilisateurs",
+        "loading": "Chargement",
+        "fullName": "Nom Complet",
+        "age": "Âge",
+        "years": "ans"
+    },
+    "userForm": {
+        "name": "Prénom",
+        "lastName": "Nom",
+        "birthDate": "Date de Naissance",
+        "cancel": "Annuler",
+        "submit": "Créer",
+        "success": "Utilisateur créé avec succès",
+        "errors": {
+            "nameRequired": "Le prénom est obligatoire",
+            "lastNameRequired": "Le nom est obligatoire",
+            "birthDateRequired": "La date de naissance est obligatoire",
+            "birthDateFuture": "La date de naissance ne peut pas être future",
+            "birthDateInvalid": "La date de naissance n'est pas valide"
+        }
+    }
+}
