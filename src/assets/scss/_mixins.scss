@@ -18,7 +18,7 @@
 }
 
 
-//Button
+//Buttons
 @mixin button($bgColor) {
     background-color: $bgColor; 
     color: white;
@@ -33,4 +33,52 @@
         background-color: darken($bgColor, 8);
         cursor: pointer;
     }
+}
+
+@mixin btn {
+    padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      } 
+
+//Form
+
+@mixin label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $dark-gray;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+@mixin input {
+    width: 100%;
+        padding: 0.75rem;
+        border: 2px solid $gray;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-family: $principal-font;
+        transition: border-color .2s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+        }
+
+        &.error {
+          border-color: $error;
+        }
+
+        &::placeholder {
+          color: lighten($dark-gray, 20%);
+        }
+
 }
