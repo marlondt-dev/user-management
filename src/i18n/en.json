@@ -2,5 +2,8 @@
     "nav": {
         "users": "Users",
         "createUsers": "Create User"
+    },
+    "userList" : {
+        "title": "Users"
     }
 }
