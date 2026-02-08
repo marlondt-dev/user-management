@@ -6,6 +6,9 @@ const { locale } = useI18n()
 const languages = [
     { code: 'es', name: 'Español', flag: 'ES'},
     { code: 'en', name: 'English', flag: 'EN'},
+    { code: 'it', name: 'Italiano', flag: 'IT'},
+    { code: 'fr', name: 'Français', flag: 'FR'},
+    { code: 'de', name: 'Deutsch', flag: 'DE'},
 ]
 
 const changeLanguage = (code: string) => {
@@ -26,7 +29,7 @@ const changeLanguage = (code: string) => {
 
 
     .language-selector {
-        margin-left: auto;
+        
         display: flex;
         gap: 0.5rem;
 

@@ -17,7 +17,9 @@ const {t} = useI18n()
     
     <LanguageSelector />
     </nav>   
+    <main>
     <RouterView />
+    </main>
   </div>
   
 </template>
@@ -29,12 +31,12 @@ nav {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  gap: 1rem;
   @include tablet {
     display: flex;
     flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
+    justify-content: space-between;
+    align-items: center; 
   }
   
   padding: 1rem 2rem;
@@ -63,7 +65,7 @@ nav {
 
 
 main {
-  max-width: 75rem;
+  max-width: 90rem;
   margin: 2rem auto;
   padding: 0 2rem;
 }
