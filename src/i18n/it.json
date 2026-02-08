@@ -1,0 +1,28 @@
+{
+    "nav": {
+        "users": "Utenti",
+        "createUsers": "Crea Utente"
+    },
+    "userList": {
+        "title": "Lista Utenti",
+        "loading": "Caricamento",
+        "fullName": "Nome Completo",
+        "age": "Età",
+        "years": "anni"
+    },
+    "userForm": {
+        "name": "Nome",
+        "lastName": "Cognome",
+        "birthDate": "Data di Nascita",
+        "cancel": "Annulla",
+        "submit": "Crea",
+        "success": "Utente creato con successo",
+        "errors": {
+            "nameRequired": "Il nome è obbligatorio",
+            "lastNameRequired": "Il cognome è obbligatorio",
+            "birthDateRequired": "La data di nascita è obbligatoria",
+            "birthDateFuture": "La data di nascita non può essere futura",
+            "birthDateInvalid": "La data di nascita non è valida"
+        }
+    }
+}

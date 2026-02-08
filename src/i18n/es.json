@@ -9,5 +9,20 @@
         "fullName": "Nombre completo",
         "age": "Edad",
         "years": "años"
+    },
+    "userForm": {
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "birthDate": "Fecha de nacimiento",
+        "cancel": "Cancelar",
+        "submit": "Crear",
+        "success": "Ususario creado correctamente",
+        "errors": {
+            "nameRequired": "El nombre es obligatorio",
+            "lastNameRequired": "El apellido es obligatorio",
+            "birthDateRequired": "La fecha de nacimiento es obligatoria",
+            "birthDateFuture": "La fecha de nacimiento no puede ser futura",
+            "birthDateInvalid": "La fecha de nacimiento no es válida"
+        }
     }
 }

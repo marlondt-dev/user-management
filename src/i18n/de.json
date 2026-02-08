@@ -1,0 +1,28 @@
+{
+    "nav": {
+        "users": "Benutzer",
+        "createUsers": "Benutzer Erstellen"
+    },
+    "userList": {
+        "title": "Benutzerliste",
+        "loading": "Laden",
+        "fullName": "Vollständiger Name",
+        "age": "Alter",
+        "years": "Jahre"
+    },
+    "userForm": {
+        "name": "Vorname",
+        "lastName": "Nachname",
+        "birthDate": "Geburtsdatum",
+        "cancel": "Abbrechen",
+        "submit": "Erstellen",
+        "success": "Benutzer erfolgreich erstellt",
+        "errors": {
+            "nameRequired": "Der Vorname ist erforderlich",
+            "lastNameRequired": "Der Nachname ist erforderlich",
+            "birthDateRequired": "Das Geburtsdatum ist erforderlich",
+            "birthDateFuture": "Das Geburtsdatum darf nicht in der Zukunft liegen",
+            "birthDateInvalid": "Das Geburtsdatum ist ungültig"
+        }
+    }
+}
