@@ -4,7 +4,3 @@ export interface User {
     birthDate: string 
 }
 
-export interface userWithAge extends User {
-    age: number
-    fullName: string
-}
