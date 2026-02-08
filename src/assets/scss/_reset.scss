@@ -17,10 +17,15 @@ picture {
   max-width: 100%;
 }
 
-h1, h2, h3 {
-    margin: 1rem 0;
+h1, h2 {
+    margin: 2rem 0;
     font-family: $principal-font;
     font-weight: 300;
     text-align: center;
     
+}
+
+h3 {
+  font-family: $principal-font;
+  font-weight: 300;
 }
