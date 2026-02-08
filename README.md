@@ -1,6 +1,12 @@
 # User Management App
 
-Aplicación de gestión de usuarios desarrollada con Vue 3 y TypeScript como prueba técnica.
+Aplicación de gestión de usuarios desarrollada con Vue 3 y TypeScript.
+
+
+<img width="1910" height="667" alt="Captura de pantalla 2026-02-08 043452" src="https://github.com/user-attachments/assets/c1f3cf83-ffc6-4a1d-b3b9-6b1d855b74a3" />
+
+
+<img width="1903" height="851" alt="Captura de pantalla 2026-02-08 043502" src="https://github.com/user-attachments/assets/5b2671a9-3102-42f4-8389-1f5b62aa6cae" />
 
 ## 🚀 Cómo arrancar el proyecto
 
@@ -58,7 +64,7 @@ La aplicación estará disponible en `http://localhost:5173`
 ### Servidor Mock
 - **Express.js local**: Servidor HTTP real (no solo interceptores) para simular mejor el comportamiento de una API REST.
 - **CORS habilitado**: Permite la comunicación entre el frontend (puerto 5173) y el backend (puerto 3001).
-- **Datos en memoria**: Los datos no persisten al reiniciar (según los requisitos de la prueba).
+- **Datos en memoria**: Los datos no persisten al reiniciar.
 
 ### Estilos
 - **SCSS**: Uso de variables, mixins y estructura modular para estilos mantenibles.
@@ -123,6 +129,5 @@ user-management/
 
 ## 👤 Autor
 
-[Marlon Torres]
+Marlon Torres
 
-## 📝 Notas
