@@ -20,8 +20,10 @@ app.get('/api/users/1/users', (req, res)=> {
     res.json(users)
 })
 
-app.post('/api/users/1/users', (req, post) => {
+app.post('/api/users/1/users', (req, res) => {
     const newUser = req.body 
+    console.log('Usuario creado:', newUser) 
+    console.log('Total usuarios:', users.length)
     users.push(newUser)
     res.status(204).send()
 })
