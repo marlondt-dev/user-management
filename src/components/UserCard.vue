@@ -19,11 +19,11 @@ const age = calculateAge(props.user.birthDate)
 
 <template>
   <div class="user-card">
-    <div class="user-info">
-      <h3>{{ fullName }}</h3>
-      <p class="user-age">{{ age }} {{ t('userList.years') }}</p>
+    <div class="user-card__info">
+      <h3 class="user-card__title">{{ fullName }}</h3>
+      <p class="user-card__age">{{ age }} {{ t('userList.years') }}</p>
     </div>
-  </div>    
+  </div>
   
 </template>
 
@@ -42,17 +42,19 @@ const age = calculateAge(props.user.birthDate)
     transform: translateY(-2px);
   }
 
-  &-info {
-    h3 {
-      font-size: 1.25rem;
+  &__title {
+     
+      font-size: $font-size-lg; 
+      font-weight: $font-weight-semibold;
       color: $dark-gray;
       margin-bottom: 0.5rem;
-    }
+    
+  }
 
-    &-age {
-      color: $dark-gray;
-      font-size: 0.875rem;
-    }
+  &__age {
+    color: $dark-gray;
+    font-size: $font-size-sm; 
+    font-weight:  $font-weight-normal;
   }
 }
 
