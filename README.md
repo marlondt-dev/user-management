@@ -69,6 +69,10 @@ La aplicación estará disponible en `http://localhost:5173`
 - **vue-i18n**: Implementación completa en 5 idiomas (ES, EN, IT, FR, DE).
 - **Estructura escalable**: Archivos JSON separados por idioma para facilitar la adición de nuevas traducciones.
 
+### Calidad de Código
+- **ESLint + Prettier**: Configuración estricta para Vue 3 + TypeScript que se ejecuta automáticamente en pre-commit
+- **Husky + Commitlint**: Pipeline de validación que asegura mensajes de commit siguiendo Conventional Commits
+
 ### Servidor Mock
 
 - **Express.js local**: Servidor HTTP real (no solo interceptores) para simular mejor el comportamiento de una API REST.
@@ -118,6 +122,7 @@ La aplicación estará disponible en `http://localhost:5173`
 - **SCSS** - Preprocesador CSS
 - **Express.js** - Servidor mock
 - **ESLint / Prettier** - Automatizar calidad y formato de código
+- **Husky / Commitlint** - Git hooks y validación de los mensajes de los commits siguiendo el formato Conventional Commits
 ---
 
 ## 📁 Estructura del proyecto
