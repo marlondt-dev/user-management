@@ -1,88 +1,85 @@
 @use 'variables' as *;
 @use 'sass:color';
 
-
 /** Media Queries **/
 @mixin mobile {
-    @media (min-width: #{$mobile}) {
-        @content;
-    }
+  @media (min-width: #{$mobile}) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (min-width: #{$tablet}) {
-        @content;
-    }
-}
-  
-@mixin desktop {
-    @media (min-width: #{$desktop}) {
-        @content;
-    }
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
 }
 
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
 
 //Buttons
 @mixin button($bgColor) {
-    background-color: $bgColor; 
-    color: $white;
-    padding: .3rem .8rem;
-    border-radius: .3rem;
-    font-weight: bold;
-    display: inline-block;
-    transition: background-color .2s ease;
-    border: none;
+  background-color: $bgColor;
+  color: $white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  border: none;
 
-    &:hover {
-        background-color: color.scale($bgColor, $lightness: -40%);
-        cursor: pointer;
-    }
+  &:hover {
+    background-color: color.scale($bgColor, $lightness: -40%);
+    cursor: pointer;
+  }
 }
 
 @mixin btn {
-    padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        font-weight: $font-weight-semibold;
-        font-size: $font-size-base;
-        transition: all 0.2s ease;
-        cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  transition: all 0.2s ease;
+  cursor: pointer;
 
-        &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-      } 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
 
 //Form
 
 @mixin label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: $dark-gray;
-    font-weight:  $font-weight-semibold;
-    font-size: $font-size-sm; 
+  display: block;
+  margin-bottom: 0.5rem;
+  color: $dark-gray;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-sm;
 }
 
 @mixin input {
-    width: 100%;
-        padding: 0.75rem;
-        border: 2px solid $gray;
-        border-radius: 0.5rem;
-        font-size: $font-size-base; 
-        font-family: $principal-font;
-        transition: border-color .2s ease;
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid $gray;
+  border-radius: 0.5rem;
+  font-size: $font-size-base;
+  font-family: $principal-font;
+  transition: border-color 0.2s ease;
 
-        &:focus {
-          outline: none;
-          border-color: $primary;
-        }
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
 
-        &.error {
-          border-color: $error;
-        }
+  &.error {
+    border-color: $error;
+  }
 
-        &::placeholder {
-          color: color.scale($dark-gray, $lightness: 20%);
-        }
-
+  &::placeholder {
+    color: color.scale($dark-gray, $lightness: 20%);
+  }
 }

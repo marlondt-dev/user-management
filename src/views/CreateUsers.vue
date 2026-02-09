@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router'; 
-import { ref } from 'vue';
-import { useUsers } from '@/composables/useUsers';
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+import { useUsers } from '@/composables/useUsers'
 
-const {t} = useI18n()
+const { t } = useI18n()
 const router = useRouter()
-const {createUser, loading} = useUsers()
+const { createUser, loading } = useUsers()
 
 const name = ref('')
 const lastName = ref('')
@@ -14,78 +14,75 @@ const birthDate = ref('')
 const successMessage = ref('')
 
 const errors = ref({
-    name:'',
-    lastName: '',
-    birthDate: ''
+  name: '',
+  lastName: '',
+  birthDate: '',
 })
 
 const validateForm = (): boolean => {
-    errors.value = {
-        name: '',
-        lastName: '',
-        birthDate: ''
+  errors.value = {
+    name: '',
+    lastName: '',
+    birthDate: '',
+  }
+
+  let isValid = true
+
+  if (!name.value.trim()) {
+    errors.value.name = t('userForm.errors.nameRequired')
+    isValid = false
+  }
+
+  if (!lastName.value.trim()) {
+    errors.value.lastName = t('userForm.errors.lastNameRequired')
+    isValid = false
+  }
+
+  if (!birthDate.value) {
+    errors.value.birthDate = t('userForm.errors.birthDateRequired')
+    isValid = false
+  } else {
+    const selectedDate = new Date(birthDate.value)
+    const today = new Date()
+
+    if (isNaN(selectedDate.getTime())) {
+      errors.value.birthDate = t('userForm.errors.invalidBirthDate')
+      isValid = false
+    } else if (selectedDate > today) {
+      errors.value.birthDate = t('userForm.errors.birthDateFuture')
+      isValid = false
     }
-
-    let isValid = true
-
-    if(!name.value.trim()) {
-        errors.value.name = t('userForm.errors.nameRequired')
-        isValid = false
-    }
-   
-    if(!lastName.value.trim()) {
-        errors.value.lastName = t('userForm.errors.lastNameRequired')
-        isValid = false
-    }
-
-    if(!birthDate.value) {
-        errors.value.birthDate = t('userForm.errors.birthDateRequired')
-        isValid = false
-    } else {
-            const selectedDate = new Date(birthDate.value)
-            const today = new Date()
-
-            if (isNaN(selectedDate.getTime())) {
-            errors.value.birthDate = t('userForm.errors.invalidBirthDate')
-            isValid = false
-        }
-        else if (selectedDate > today) {
-            errors.value.birthDate = t('userForm.errors.birthDateFuture')
-            isValid = false
-        }
-        }
-        return isValid
+  }
+  return isValid
 }
 
 const handleSubmit = async () => {
-    if(!validateForm()) {
-        return
-    }
-    try {
-        await createUser({
-            name: name.value.trim(),
-            lastName: lastName.value.trim(),
-            birthDate: birthDate.value        
-        })
-        successMessage.value = t('userForm.success')
+  if (!validateForm()) {
+    return
+  }
+  try {
+    await createUser({
+      name: name.value.trim(),
+      lastName: lastName.value.trim(),
+      birthDate: birthDate.value,
+    })
+    successMessage.value = t('userForm.success')
 
-        name.value = ''
-        lastName.value = ''
-        birthDate.value = ''
+    name.value = ''
+    lastName.value = ''
+    birthDate.value = ''
 
-        setTimeout(() => {
-            router.push('/')
-        }, 2000)
-    } catch (error) {
-        console.error('Error creating user:', error)
-        
-    }
+    setTimeout(() => {
+      router.push('/')
+    }, 2000)
+  } catch (error) {
+    console.error('Error creating user:', error)
+  }
 }
 
 const handleCancel = () => {
   router.push('/')
 }
-
 </script>
 <template>
   <div class="create-user">
@@ -95,63 +92,58 @@ const handleCancel = () => {
       {{ successMessage }}
     </div>
 
-    <form @submit.prevent="handleSubmit" class="create-user__form">
+    <form class="create-user__form" @submit.prevent="handleSubmit">
+      <div class="create-user__form-group">
+        <label for="name">{{ t('userForm.name') }}</label>
+        <input
+          id="name"
+          v-model="name"
+          type="text"
+          :placeholder="t('userForm.name')"
+          :class="{ 'create-user__input--error': errors.name }"
+        />
+        <span v-if="errors.name" class="create-user__error-message">{{ errors.name }}</span>
+      </div>
 
       <div class="create-user__form-group">
-      <label for="name">{{ t('userForm.name') }}</label>
-      <input
-      id="name"
-      v-model="name"
-      type="text"
-      :placeholder=" t('userForm.name')"
-      :class="{ 'create-user__input--error': errors.name }"
-       />
-       <span v-if="errors.name" class="create-user__error-message">{{ errors.name }}</span>
-       </div>
+        <label for="lastName">{{ t('userForm.lastName') }}</label>
+        <input
+          id="lastName"
+          v-model="lastName"
+          type="text"
+          :placeholder="t('userForm.lastName')"
+          :class="{ 'create-user__input--error': errors.lastName }"
+        />
+        <span v-if="errors.lastName" class="create-user__error-message">{{ errors.lastName }}</span>
+      </div>
 
       <div class="create-user__form-group">
-      <label for="lastName">{{ t('userForm.lastName') }}</label>
-      <input
-      id="lastName"
-      v-model="lastName"
-      type="text"
-      :placeholder=" t('userForm.lastName')"
-      :class="{ 'create-user__input--error': errors.lastName }"
-       />
-       <span v-if="errors.lastName" class="create-user__error-message">{{ errors.lastName }}</span>
-       </div>
+        <label for="birthDate">{{ t('userForm.birthDate') }}</label>
+        <input
+          id="birthDate"
+          v-model="birthDate"
+          type="date"
+          :placeholder="t('userForm.birthDate')"
+          :class="{ 'create-user__input--error': errors.birthDate }"
+        />
+        <span v-if="errors.birthDate" class="create-user__error-message">{{
+          errors.birthDate
+        }}</span>
+      </div>
 
-
-      <div class="create-user__form-group">
-      <label for="birthDate">{{ t('userForm.birthDate') }}</label>
-      <input
-      id="birthDate"
-      v-model="birthDate"
-      type="date"
-      :placeholder=" t('userForm.birthDate')"
-      :class="{ 'create-user__input--error': errors.birthDate }"
-       />
-       <span v-if="errors.birthDate" class="create-user__error-message">{{ errors.birthDate }}</span>
-       </div>
-
-       <div class="create-user__actions">
-        <button 
-          type="button" 
-          @click="handleCancel"
+      <div class="create-user__actions">
+        <button
+          type="button"
           class="create-user__btn create-user__btn--cancel"
+          @click="handleCancel"
         >
           {{ t('userForm.cancel') }}
         </button>
-        <button 
-          type="submit" 
-          class="create-user__btn create-user__btn--submit"
-          :disabled="loading"
-        >
+        <button type="submit" class="create-user__btn create-user__btn--submit" :disabled="loading">
           {{ loading ? t('userList.loading') : t('userForm.submit') }}
         </button>
       </div>
     </form>
-
   </div>
 </template>
 
@@ -170,7 +162,7 @@ const handleCancel = () => {
     border: 2px solid $success;
     text-align: center;
     font-weight: $font-weight-semibold;
-    font-size: $font-size-base;  
+    font-size: $font-size-base;
   }
 
   &__form {
@@ -184,11 +176,11 @@ const handleCancel = () => {
     margin-bottom: 1.5rem;
 
     label {
-      @include label()
+      @include label();
     }
 
     input {
-      @include input()
+      @include input();
     }
   }
 
@@ -211,7 +203,7 @@ const handleCancel = () => {
   }
 
   &__btn {
-    @include btn()
+    @include btn();
   }
 
   &__btn--cancel {
