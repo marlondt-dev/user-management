@@ -1,6 +1,7 @@
 import { ref } from "vue";
 import { userService } from "@/services/api";
 import type {User} from '@/types/user'
+import { FetchUsersError, CreateUserError } from '@/errors/errors'
 
 export function useUsers() {
     const users = ref<User[]>([])
@@ -15,8 +16,12 @@ export function useUsers() {
             users.value = await userService.getUsers()
             
         } catch (e) {
-            error.value = 'Error while trying to fetch users'  
-        }finally {
+            if (e instanceof FetchUsersError) {
+                error.value = 'Error while fetching users'
+            } else {
+                error.value = 'Unexpected error'
+            }
+        }finally { 
             loading.value = false 
         }
 
@@ -29,7 +34,12 @@ export function useUsers() {
         try {
            await userService.createUser(user) 
         } catch (e) {
-            error.value = 'Error while creating a new user'
+            if (e instanceof CreateUserError){
+                error.value = 'Error whilte creating user'
+            }else {
+                error.value = 'unexpected error'
+            }
+
             throw e
         }finally {
             loading.value = false
