@@ -47,7 +47,8 @@ nav {
 
     a {
       color: $text-secondary;
-      font-weight: 500;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-base; ;
       padding: 0.5rem 0;
       transition: color 0.2s;
 
