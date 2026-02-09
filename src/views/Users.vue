@@ -18,11 +18,11 @@ onMounted( async() => {
 
   <section class="users">
 
-    <div v-if="loading" class="loading">
+    <div v-if="loading" class="users__loading">
       {{ t('userList.loading') }}
     </div>
 
-    <div v-else-if="error" class="error">
+    <div v-else-if="error" class="users__error">
       {{ error }}
     </div>
 
@@ -32,23 +32,26 @@ onMounted( async() => {
 </template>
 
 <style lang="scss" scoped>
+
 .users {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1.5rem;
-}
 
-.loading {
+  &__loading {
   text-align: center;
   color: $dark-gray;
   padding: 3rem;
+  font-size: $font-size-base;  
 }
 
-.error {
+&__error {
   text-align: center;
   color: $error;
   padding: 3rem;
+  font-size: $font-size-base;  
 }
 
+}
 
 </style>
