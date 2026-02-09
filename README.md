@@ -89,7 +89,7 @@ La aplicación estará disponible en `http://localhost:5173`
   - Fecha no futura
   - Limpieza de espacios en blanco
 
-## Gestión de errores
+### Gestión de errores
 
 - La aplicación utiliza clases de error personalizadas que extienden de `Error`,
   permitiendo diferenciar errores de dominio y mostrar mensajes adecuados en la UI.
@@ -117,8 +117,7 @@ La aplicación estará disponible en `http://localhost:5173`
 - **vue-i18n** - Internacionalización
 - **SCSS** - Preprocesador CSS
 - **Express.js** - Servidor mock
-- **CORS** - Middleware para peticiones cross-origin
-
+- **ESLint / Prettier** - Automatizar calidad y formato de código
 ---
 
 ## 📁 Estructura del proyecto
@@ -133,6 +132,7 @@ user-management/
 │   │   └── scss/
 │   ├── components/
 │   ├── composables/
+│   ├── errors/
 │   ├── i18n/
 │   │   ├── locales/
 │   │   └── index.ts
