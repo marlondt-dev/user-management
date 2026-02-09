@@ -70,7 +70,7 @@ La aplicación estará disponible en `http://localhost:5173`
 - **Estructura escalable**: Archivos JSON separados por idioma para facilitar la adición de nuevas traducciones.
 
 ### Calidad de Código
-- **ESLint + Prettier**: Configuración estricta para Vue 3 + TypeScript que se ejecuta automáticamente en pre-commit
+- **ESLint + Prettier**: Automatizar calidad y formato de código
 - **Husky + Commitlint**: Pipeline de validación que asegura mensajes de commit siguiendo Conventional Commits
 
 ### Servidor Mock
