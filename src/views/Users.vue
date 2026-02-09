@@ -26,7 +26,7 @@ onMounted( async() => {
       {{ error }}
     </div>
 
-    <UserCard v-for="(user, index) in users" :key="index" :user="user"/>
+    <UserCard v-for="user in users" :key="user.id" :user="user"/>
   </section>
 
 </template>
