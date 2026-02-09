@@ -1,3 +1,7 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+
 /** Media Queries **/
 @mixin mobile {
     @media (min-width: #{$mobile}) {
@@ -21,7 +25,7 @@
 //Buttons
 @mixin button($bgColor) {
     background-color: $bgColor; 
-    color: white;
+    color: $white;
     padding: .3rem .8rem;
     border-radius: .3rem;
     font-weight: bold;
@@ -30,7 +34,7 @@
     border: none;
 
     &:hover {
-        background-color: darken($bgColor, 8);
+        background-color: color.scale($bgColor, $lightness: -40%);
         cursor: pointer;
     }
 }
@@ -38,8 +42,8 @@
 @mixin btn {
     padding: 0.75rem 1.5rem;
         border-radius: 0.5rem;
-        font-weight: 600;
-        font-size: 1rem;
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-base;
         transition: all 0.2s ease;
         cursor: pointer;
 
@@ -55,8 +59,8 @@
     display: block;
     margin-bottom: 0.5rem;
     color: $dark-gray;
-    font-weight: 600;
-    font-size: 0.875rem;
+    font-weight:  $font-weight-semibold;
+    font-size: $font-size-sm; 
 }
 
 @mixin input {
@@ -64,7 +68,7 @@
         padding: 0.75rem;
         border: 2px solid $gray;
         border-radius: 0.5rem;
-        font-size: 1rem;
+        font-size: $font-size-base; 
         font-family: $principal-font;
         transition: border-color .2s ease;
 
@@ -78,7 +82,7 @@
         }
 
         &::placeholder {
-          color: lighten($dark-gray, 20%);
+          color: color.scale($dark-gray, $lightness: 20%);
         }
 
 }

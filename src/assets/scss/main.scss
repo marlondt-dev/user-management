@@ -1,7 +1,6 @@
-@import 'variables';
-@import 'reset';
-@import 'mixins';
-
+@use 'variables' as *;
+@use 'reset';
+@use 'mixins' as *;
 
 body {
   font-family: $principal-font;
